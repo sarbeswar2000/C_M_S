@@ -2,7 +2,7 @@
 import ContentContext from "./ContentContext";
 import { useState } from "react";
   const ContentState = (props) => {
-  const host = "http://localhost:5000";
+  const host = "http://localhost:8000";
   const contentinitial = [];
   const [contents,Setcontent] = useState(contentinitial);
 //Get all notes

@@ -148,9 +148,9 @@ export default function Contents() {
         <div className="container mx-2"> 
                 {contents.length ===0 && 'No notes to display'}
                 </div>
-        {contents?.map((content) => {
+        {contents.map((content) => {
           return (
-            <Contentitem key={content._id} updateNote={updatecontents} note={content} />
+            <Contentitem key={content._id} updateContent={updatecontents} content={content} />
           );
         })}
       </div>
@@ -159,13 +159,13 @@ export default function Contents() {
 }
 {
   {
-    /*
-          {notes.map((notes) => {
-            return (
-              <Noteitem key={notes._id} updateNote={updateNote} note={notes} />
-            );
-          })}
-           */
+    // /*
+    //       {notes.map((notes) => {
+    //         return (
+    //           <Noteitem key={notes._id} updateNote={updateNote} note={notes} />
+    //         );
+    //       })}
+    //        */
   }
   /* This error come to our code due to that notes is a object and in map function only you can return 
 that is the Array  and it is mandatory To solve the error, console.log the value you're calling the map()

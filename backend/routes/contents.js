@@ -94,7 +94,7 @@ router.delete("/deletecontents/:id", fetchuser, async (req, res) => {
       return res.status(401).send("Not allowed");
     }
     content = await Contents.findByIdAndDelete(req.params.id);// it will access the id which is send by the req
-    res.json({ succes: "Note has been deleted ", note: note });
+    res.json({ succes: "Note has been deleted ",content:content });
   } catch (error) {
     console.error(error.message);
     res.status(500).send("Internal Server Error");

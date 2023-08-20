@@ -1,21 +1,85 @@
-.loginPage {
-
-  background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)),;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 120%;
+.service-btn {
+  background-color: rgb(0, 0, 0, 0.2);
+  width: 100%;
+  color: white;
+  height: 45px;
+  box-shadow: none !important;
 }
-.loginForm {
-  background-color: rgba(1, 32, 93, 0.6);
+
+.service-btn:hover {
+  color: #66fcf1;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.service-icon {
+  margin-right: 10px;
+}
+
+.separator {
+  width: 100%;
   color: white;
 }
-.employee_image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+
+.auth-input {
+  background: rgb(0, 0, 0, 0.2);
+  height: 45px;
+  border: none !important;
+  color: white;
+  box-shadow: none !important;
 }
-.empImg {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
+
+.auth-input:focus {
+  background: rgb(0, 0, 0, 0.3);
+  color: #66fcf1;
 }
+
+.input-info-text {
+  color: rgb(255, 255, 255, 0.8);
+}
+
+.auth-btn {
+  background: #66fcf1;
+  height: 45px;
+  width: 100%;
+  font-size: 18px;
+  box-shadow: none !important;
+}
+
+.auth-btn:hover {
+  background: rgb(0, 0, 0, 0.3);
+  color: #66fcf1;
+}
+
+.text {
+  text-align: center;
+  color: white;
+}
+
+.text-link {
+  color: #66fcf1;
+}
+
+.text-link:hover {
+  color: #45a29e;
+}
+
+.btn-theme {
+  background-color: white !important;
+  color: black !important;
+  box-shadow: none !important;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.litu {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('D:\REACT JS\C_M_S\public\29286907-cms-content-management-system-concept-with-interface-and-world-map-on-blue-background.jpg');
+  /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Add the overlay with opacity */

@@ -2,32 +2,30 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import contentcontext from "../context/contents/ContentContext";
 
-function AddContent() {
+// import Noteitem from "./Noteitem";
+function AddNote() {
   const context = useContext(contentcontext);
   const { addContent } = context;
-  const [content, Setcontent] = useState([
-    {
-      id: " ",
-      etitle: "",
-      edescription: "",
-      etag: "default",
-    },
-  ]);
+  const [content, setContent] = useState({
+    title: "",
+    description: "",
+    tag: "default",
+  });
   const handleOnclick = (e) => {
     e.preventDefault();
     addContent(content.title, content.description, content.tag);
-    Setcontent({
+    setContent({
       title: "",
       description: "",
     });
   };
   const onChangeClick = (e) => {
-    Setcontent({ ...content, [e.target.name]: e.target.value });
+    setContent({ ...content, [e.target.name]: e.target.value });
   };
   return (
     <div>
       <div className="container my-3">
-        <h2>Add Content</h2>
+        <h2>Add  Content</h2>
       </div>
       <div className="container my-3">
         <form className="my-3">
@@ -76,4 +74,4 @@ function AddContent() {
   );
 }
 
-export default AddContent;
+export default AddNote;
