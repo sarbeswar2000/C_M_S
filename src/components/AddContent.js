@@ -23,8 +23,8 @@ function AddNote() {
     setContent({ ...content, [e.target.name]: e.target.value });
   };
   return (
-    <div>
-      <div className="container my-3">
+    <div >
+      <div className="container my-3 ">
         <h2>Add  Content</h2>
       </div>
       <div className="container my-3">

@@ -1,33 +1,32 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-function Signup(props) {
+function AdminSignup(props) {
   let navigate = useNavigate();
   const host = "http://localhost:8000";
   const [credentials, setCredentials] = useState({
-    name: "",
     email: "",
     password: "",
     cpassword: "",
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password } = credentials; // here we are doing the destructuring.
-    const response = await fetch(`${host}/api/auth/createuser/`, {
+    const { email, password } = credentials; // here we are doing the destructuring.
+    const response = await fetch(`${host}/api/admin/register/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ email, password }),
     });
     const json = await response.json();
     console.log(json);
     if (json.success) {
       // save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
-      navigate("/Login");
+      navigate("/AdminLogin");
       props.showAlert("Account Created Successfully", "success");
     } else {
-      navigate("/Signup");
+      navigate("/AdminSignup");
       setCredentials({ email: "", password: "" });
       props.showAlert("Invalid  Details", "danger");
     }
@@ -36,25 +35,11 @@ function Signup(props) {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div class="page-content d-flex align-items-center  wrapper">
-      <div class="container d-flex justify-content-center">
-        <div className="container col-12 col-sm-10 ">
-          <big>Signup</big>
-
+    <div className="page-content d-flex align-items-center wrapper ">
+      <div className="container d-flex justify-content-center">
+        <div className="container col-12 col-sm-10 rw-10">
+          <big>AdminSignup</big>
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                className="form-control"
-                id="name"
-                aria-describedby="emailHelp"
-                placeholder="Enter name"
-                name="name"
-                value={credentials.name}
-                onChange={onChangeClick}
-              />
-            </div>
             <div className="form-group">
               <label htmlFor="email">Email address</label>
               <input
@@ -104,4 +89,4 @@ function Signup(props) {
     </div>
   );
 }
-export default Signup;
+export default AdminSignup;

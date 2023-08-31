@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-function Login(props) {
+function AdminLogin(props) {
   let navigate = useNavigate();
   const host = "http://localhost:8000";
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${host}/api/auth/login`, {
+    const response = await fetch(`${host}/api/admin/login`, {
       method: "POST",
 
       headers: {
@@ -23,11 +23,11 @@ function Login(props) {
       // save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
       props.showAlert("Loged In Successfully", "success");
-      navigate("/Home");
+      navigate("/AdminHome");
     } else {
       props.showAlert("Invalid credentials", "danger");
       setCredentials({ email: "", password: "" });
-      navigate("/login");
+      navigate("/Adminlogin");
     }
   };
   const onChangeClick = (e) => {
@@ -37,7 +37,6 @@ function Login(props) {
     <div class="page-content d-flex align-items-center  wrapper">
       <div class="container d-flex justify-content-center">
         <div className="container col-12 col-sm-10 ">
-          <big>Login</big>
           <form onSubmit={handleSubmit}>
             <div className="form-group my-1">
               <label htmlFor="email">Email address</label>
@@ -77,4 +76,4 @@ function Login(props) {
     </div>
   );
 }
-export default Login;
+export default AdminLogin;

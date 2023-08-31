@@ -1,7 +1,6 @@
 import React from "react";
 import { useContext } from "react";
 import contentcontext from "../context/contents/ContentContext";
-
 export default function Contentitem(props) {
   const context = useContext(contentcontext);
   const { deleteContent } = context;

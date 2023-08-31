@@ -14,9 +14,9 @@ export default function Navbar() {
  }
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-white bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-white bg-dark ">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/</div>">
+          <Link className="navbar-brand" to="/Landpage">
             C_M_S
           </Link>
           <button
@@ -28,9 +28,9 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+          
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse " id="navbarSupportedContent">
             <ul className="navbar-nav me mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
@@ -53,11 +53,17 @@ export default function Navbar() {
                   About
                 </Link>
               </li>
-            {!localStorage.getItem('token')?<form className="form-inline my-2 my-lg-0">
+              {/* {!localStorage.getItem('token')?<form className="form-inline my-2 my-lg-0">
+             
+            </form>:<button className="btn btn-primary mx-2" onClick={handleOnLogout}>Logout</button>} */}
+            {!localStorage.getItem('token')?<form className="form-inline my-2 my-lg-0">      
+            <Link className="btn btn-primary mx-2 " to="/AdminSignup" role="button">
+              Becoming an admin
+              </Link>        
               <Link className="btn btn-primary mx-2" to="/login" role="button">
                 Login 
               </Link>
-              <Link className="btn btn-primary mx-2" to="/signup" role="button">
+              <Link className="btn btn-primary mx-2 " to="/signup" role="button">
                 Signup
               </Link>
             </form>:<button className="btn btn-primary mx-2" onClick={handleOnLogout}>Logout</button>}

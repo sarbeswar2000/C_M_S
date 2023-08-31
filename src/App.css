@@ -76,10 +76,65 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url('D:\REACT JS\C_M_S\public\29286907-cms-content-management-system-concept-with-interface-and-world-map-on-blue-background.jpg');
   /* Replace with your image URL */
+  background-image: url('D:\REACT JS\C_M_S\public\AdobeStock_218599233.webp');
   background-size: cover;
   background-position: center;
+  background-color: #201238;
+  color:black;
 }
+.wrapper {
+  background: #ffffff7b;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+    0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  margin-left: 55%;
+  margin-bottom: 1%;
+  height: 400px;
+}
+.form {
+  padding: 25px 30px;
+}
+.con{
+  background: #ffffff7b;
+  border-radius: 16px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+    0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+/* for Navbar */
 
 /* Add the overlay with opacity */
+.h-txt {
+  max-width: 650px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+.h-txt span {
+  letter-spacing: 5px;
+}
+
+.h-txt h1 {
+  font-size: 3.5em;
+}
+
+.h-txt a {
+  text-decoration: none;
+  background: rgb(87, 87, 145);
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  transition: 0.4s;
+}
+
+.h-txt a:hover {
+  background: transparent;
+  border: 1px solid indianred;
+}
